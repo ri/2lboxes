@@ -1,0 +1,26 @@
+!!! 5
+%html
+  %head
+    %title 2lboxes
+
+    %link{href: "/css/bootstrap.css", rel: "stylesheet", media: "all"}
+
+    %script{src: "/js/vendor/jquery-1.5.js"}
+    %script{src: "/js/vendor/underscore-1.1.6.js"}
+    %script{src: "/js/vendor/backbone-0.5.3.js"}
+
+    %script{src: "/js/vendor/jquery-ui-1.8.16.custom.min.js"}
+    %script{src: "/js/vendor/jquery.isotope.min.js"}
+    %script{src: "/js/vendor/bootstrap-modal.js"}
+
+    -# %script{src: "/js/2lboxes.js"}
+  %body
+    .topbar
+      .fill
+        .container-fluid
+          %a{:href=>"/", :class => "brand"} 2lBoxes
+
+          .top-actions
+            %a#add-link.btn Add Link
+            %a#add-toolbox.btn Add Toolbox
+

@@ -1,0 +1,221 @@
+.sidebar, #main {
+	margin-top: 60px;
+}
+
+.top-actions {
+	margin-left: 340px;
+	
+	.modal {
+		.input label {
+			width: 80px;
+		}
+	}
+}
+
+#links{
+	.well {
+		padding: 10px;
+	}
+	position: fixed;
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		
+		li {
+			position: relative;
+			z-index: 10;
+			height: 60px;
+			padding: 10px;
+			background-color: @grayLight;
+			display: block;
+			margin-top: 10px;
+			
+			.thumb {
+				width: 60px;
+				height: 60px;
+				float: left;
+			}
+			
+			.link-title {
+				width: 135px;
+				display: block;
+				float: left;
+				margin-left: 10px;
+				color: @white;
+			}
+			
+			.btns {
+				float: right;
+				
+				.btn {
+					display: block;
+					width: 30px;
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+}
+
+.toolbox {
+	.border-radius(8px);
+	background-color: lighten(@blue, 10%);
+	padding-bottom: 20px;
+	margin: 60px 10px 0 20px;
+	.top {		
+		margin-top: -35px;
+		width: 200px;
+		border-bottom: 40px solid @blue;
+		border-left: 40px solid transparent;
+		border-right: 40px solid transparent;
+		position: relative;
+		.handle {
+			background-image: url(/images/handle.png);
+			width: 85px;
+			height: 33px;
+			left: 55px;
+			top: -10px;
+			position: absolute;
+		}
+	}
+	h2 {
+		text-align: center;
+		padding: 5px;
+	}
+	.trays {
+		margin: 0;
+		li {
+			text-align: center;
+			list-style: none;
+			position: relative;
+			height: 40px;
+			background-color: @grayDark;
+
+			a {
+				position: absolute;
+				width: 264px;
+				color: white;
+				padding: 8px;
+				display: block;
+				background-color: black;
+				border-top: 5px solid white;
+				@transition: left .2s, top .2s, padding .2s, width .2s;
+				.transition(@transition);
+				text-decoration: none;
+				&:hover, &.dragged {
+          z-index: 4;
+          width: 280px;
+          padding: 10px;
+          left: -10px;
+          top: 10px
+				}
+			}
+		}
+	}
+	
+	&.blue {
+		background-color: @blueToolbox;
+		.top {
+			border-bottom-color: darken(@blueToolbox, 10%);
+		}
+	}
+	
+	&.red {
+		background-color: @redToolbox;
+		.top {
+			border-bottom-color: darken(@redToolbox, 10%);
+		}
+	}
+	
+	&.yellow {
+		background-color: @yellowToolbox;
+		.top {
+			border-bottom-color: darken(@yellowToolbox, 10%);
+		}
+	}
+	
+	&.green {
+		background-color: @greenToolbox;
+		.top {
+			border-bottom-color: darken(@greenToolbox, 10%);
+		}
+	}
+	
+	&.orange {
+		background-color: @orangeToolbox;
+		.top {
+			border-bottom-color: darken(@orangeToolbox, 10%);
+		}
+	}
+}
+
+.isotope, .isotope .isotope-item {
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+// Tray Page
+// ---------
+h2 {
+	font-weight: normal;
+	.toolbox-title {
+		background-color: @blueToolbox;
+		padding: 5px;
+		font-size: 24pt;
+		font-weight: bold;
+	}
+}
+
+ul.items {
+	list-style: none;
+	margin: 20px 0;
+	
+	li {
+		position: relative;
+		padding: 10px;
+		background-color: #F7F7F7;
+		display: block;
+		float: left;
+		margin-right: 20px;
+		margin-top: 10px;
+		width: 280px;
+		.border-radius(6px);
+		.box-shadow(2px 2px 2px @gray);
+		
+		.btns {
+			float: right;
+			a {
+				width: 16px;
+				height: 16px;
+				display: block;
+				margin-bottom: 5px;
+			}
+		}
+		
+		.thumb {
+			width: 60px;
+			height: 60px;
+			float: left;
+		}
+		
+		.link-title {
+			display: block;
+			float: left;
+			margin-left: 10px;
+		}
+	}
+}
