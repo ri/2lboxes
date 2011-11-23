@@ -9,6 +9,11 @@ $db ||= {
       id:    1,
       title: "Google",
       url:   "http://google.com"
+    },
+    3 => {
+      id:    3,
+      title: "Be Genius",
+      url:   "http://bjeanes.com"
     }
   }
 }

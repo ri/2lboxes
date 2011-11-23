@@ -8,25 +8,40 @@
     %script{src: "/js/vendor/jquery-1.5.js"}
     %script{src: "/js/vendor/underscore-1.1.6.js"}
     %script{src: "/js/vendor/backbone-0.5.3.js"}
-
     %script{src: "/js/vendor/jquery-ui-1.8.16.custom.min.js"}
     %script{src: "/js/vendor/jquery.isotope.min.js"}
     %script{src: "/js/vendor/bootstrap-modal.js"}
 
-    %script{src: "/js/app.js"}
+    %script{src: "/js/bootstrap.js"}
+    %script{src: "/js/app/toolboxes.js"}
     %script{src: "/js/app/routers/app.js"}
+    %script{src: "/js/app/views/app.js"}
+    %script{src: "/js/app/views/link.js"}
+    %script{src: "/js/app/views/links.js"}
+    %script{src: "/js/app/views/toolboxes.js"}
     %script{src: "/js/app/models/link.js"}
     %script{src: "/js/app/collections/links.js"}
 
-    %script
-      $(APP.init);
+    %script#links-view-template{type: "text/template"}
+      .well
+        %h3 Drop links into toolboxes
+        %ul
+
+    %script#link-view-template{type: "text/template"}
+      %img.thumb{src: 'http://placedog.com/60/60?{{ id }}'}
+      %a.link-title{href: "{{ url }}"} {{ title }}
+      .btns
+        %a.btn.move{href: '#'} Move
+        %a.btn.copy{href: '#'} Copy
+
   %body
     .topbar
       .fill
         .container-fluid
-          %a{:href=>"/", :class => "brand"} 2lBoxes
+          %a{href: "/", class: "brand"} 2lBoxes
 
           .top-actions
             %a#add-link.btn Add Link
             %a#add-toolbox.btn Add Toolbox
 
+    #main.container-fluid
