@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    %title StaticMatic
+    %link{ :rel => "stylesheet/less", :href => "lib/bootstrap.less", :media => "all"}
+    %script{ :src => "http://code.jquery.com/jquery-1.5.2.min.js"}
+    %script{ :src => "js/less-1.1.3.min.js"}
+    %script{ :src => "js/jquery-ui-1.8.16.custom.min.js"}
+    %script{ :src => "js/jquery.isotope.min.js"}
+    %script{ :src => "js/bootstrap-modal.js"}
+    
+    :javascript
+      $(function() {
+      
+        $("#container").isotope({
+          itemSelector : ".toolbox",
+          layoutMode : "masonry"
+        });
+        
+        // drag/dop functions for organizing links
+        $(".link").draggable({
+        handle: ".btn",
+        revert: true,
+        drag: function(event, ui){
+          $(this).css("opacity", "0.5");
+        },
+        stop: function() {
+          $(this).css("opacity", "1");
+        }
+        });
+        
+        $(".toolbox ul li").droppable({
+          over: function(event, ui){
+            $(this).find("a").addClass("dragged");
+          },
+          out: function(event, ui){
+            $(this).find("a").removeClass("dragged");
+          },
+          accept: ".link",
+          drop: function( event, ui ) {
+            (ui.draggable).remove();
+            $(this).find("a").removeClass("dragged");
+          }
+        });
+        
+        // add link
+        $("#link-modal").modal({
+          backdrop: "true"
+        });
+        
+        // add toolbox
+        var $newItems = $('<div class="span5 toolbox orange"><div class="top"><div class="handle"></div></div><h2></h2><ul class="trays"></ul></div>');
+          
+        $("#add-toolbox").click(function () {
+          $("#container").append( $newItems ).isotope( 'appended', $newItems );
+        });
+    
+      });
+  %body
+    = yield

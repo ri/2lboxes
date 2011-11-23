@@ -1,0 +1,33 @@
+.topbar
+  .fill
+    .container-fluid
+      %a{:href=>"/", :class => "brand"} 2lBoxes
+      
+      .top-actions
+        %a#add-link.btn{"data-controls-modal" => "link-modal"} Add Link
+        #link-modal{:class => "modal hide fade"}
+        
+          .modal-header
+            %a.close{:href=>"#"}
+              &times;
+            %h3 Add a new link
+          .modal-body
+            %form
+              %fieldset
+                .clearfix
+                  %label{:for => "url"} URL
+                  .input
+                    %input.xlarge{:size => 40, :name => "url", :value => "http://"}
+                .clearfix
+                  %label{:for => "title"} Title
+                  .input
+                    %input{:size => 40, :name => "title"}
+                .clearfix
+                  %label{:for => "desc"} Description
+                  .input
+                    %textarea.xlarge{:size => 40, :name => "desc"}
+            .modal-footer
+              %actions
+                %input.btn.primary{:value => "Add link"}            
+
+        %a#add-toolbox.btn Add Toolbox
