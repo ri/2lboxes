@@ -4,9 +4,11 @@ Toolboxes.Views.Link = Backbone.View.extend
   template: '#link-view-template'
 
   events:
-    'mouseover .btn': '_enableDrag'
-    'dragstart': '_dragStart'
-    'dragstop': '_dragStop'
+    'mouseover .btn'  : '_enableDrag'
+    'mouseover .copy' : '_setCopyMode'
+    'mouseover .move' : '_setMoveMode'
+    'dragstart'       : '_dragStart'
+    'dragstop'        : '_dragStop'
 
   rendered_template: ->
     template_html = $(@template).html()
@@ -28,3 +30,10 @@ Toolboxes.Views.Link = Backbone.View.extend
     @el.draggable
       handle: '.btn'
       revert: true
+
+  _setMoveMode: ->
+    @el.draggable "option", "helper", "original"
+
+  _setCopyMode: ->
+    @el.draggable "option", "helper", "clone"
+
