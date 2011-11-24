@@ -4,6 +4,16 @@ require 'bundler'
 Bundler.require
 
 $db ||= {
+  toolboxes: {
+    1 => {
+      id: 5,
+      label: "Web Design"
+    },
+    35 => {
+      id: 35,
+      label: "Programming",
+    }
+  },
   links: {
     1 => {
       id:    1,
@@ -15,6 +25,23 @@ $db ||= {
       title: "Be Genius",
       url:   "http://bjeanes.com"
     }
+  },
+  trays: {
+    5 => {
+      toolbox_id: 35,
+      id: 5,
+      label: "Ruby/Rails"
+    },
+    7 => {
+      toolbox_id: 1,
+      id: 7,
+      label: "Textures"
+    },
+    9 => {
+      toolbox_id: 1,
+      id: 9,
+      label: "Patterns"
+    },
   }
 }
 
@@ -65,3 +92,4 @@ end
 
 rest :links
 rest :toolboxes
+rest :trays

@@ -18,9 +18,15 @@
     %script{src: "/js/app/views/app.js"}
     %script{src: "/js/app/views/link.js"}
     %script{src: "/js/app/views/links.js"}
+    %script{src: "/js/app/views/tray.js"}
+    %script{src: "/js/app/views/toolbox.js"}
     %script{src: "/js/app/views/toolboxes.js"}
     %script{src: "/js/app/models/link.js"}
+    %script{src: "/js/app/models/tray.js"}
+    %script{src: "/js/app/models/toolbox.js"}
     %script{src: "/js/app/collections/links.js"}
+    %script{src: "/js/app/collections/trays.js"}
+    %script{src: "/js/app/collections/toolboxes.js"}
 
     %script#links-view-template{type: "text/template"}
       .well
@@ -31,8 +37,17 @@
       %img.thumb{src: 'http://placedog.com/60/60?{{ id }}'}
       %a.link-title{href: "{{ url }}"} {{ title }}
       .btns
-        %a.btn.move{href: '#'} Move
-        %a.btn.copy{href: '#'} Copy
+        %a.btn.move Move
+        %a.btn.copy Copy
+
+    %script#toolbox-view-template{type: "text/template"}
+      .top
+        .handle
+      %h2 {{ label }}
+      %ul.trays
+
+    %script#tray-view-template{type: "text/template"}
+      %a {{ label }}
 
   %body
     .topbar
@@ -45,3 +60,4 @@
             %a#add-toolbox.btn Add Toolbox
 
     #main.container-fluid
+
