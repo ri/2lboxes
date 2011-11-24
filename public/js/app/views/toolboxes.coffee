@@ -10,12 +10,18 @@ Toolboxes.Views.Toolboxes = Backbone.View.extend
     @collection.bind('reset', @resetToolboxes, @)
     @collection.fetch()
 
+    @el.isotope
+      itemSelector: ".toolbox"
+      layoutMode: "masonry"
+
     @
 
   addToolbox: (model, collection) ->
     view = new Toolboxes.Views.Toolbox(model: model)
+    view.bind "changed:trays", (->
+      @el.isotope('insert', view.el)),
+      @
     view.render()
-    @el.append(view.el)
 
   resetToolboxes: (collection) ->
     _this = @
