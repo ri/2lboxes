@@ -9,6 +9,7 @@ Toolboxes.LinkView = Backbone.View.extend
     'mouseover .move' : '_setMoveMode'
     'dragstart'       : '_dragStart'
     'dragstop'        : '_dragStop'
+    'dropped'         : '_dropped'
 
   rendered_template: ->
     template_html = $(@template).html()
@@ -37,3 +38,6 @@ Toolboxes.LinkView = Backbone.View.extend
   _setCopyMode: ->
     @el.draggable "option", "helper", "clone"
 
+  _dropped: (event, tray) ->
+    console.log("Dropped in to tray: " + tray.get('label'))
+    @remove()

@@ -24,6 +24,11 @@ $db ||= {
       id:    3,
       title: "Be Genius",
       url:   "http://bjeanes.com"
+    },
+    4 => {
+      id:    4,
+      title: "Reddit",
+      url:   "http://reddit.com"
     }
   },
   trays: {

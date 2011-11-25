@@ -26,5 +26,5 @@ Toolboxes.TrayView = Backbone.View.extend
 
   _drop: (event, ui) ->
     @_dropOut()
-
-    console.log("dropping #{event.srcElement.innerText}")
+    link = ui.draggable
+    $(link).trigger('dropped', @model)
