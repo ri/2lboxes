@@ -1,4 +1,4 @@
-Toolboxes.Views.Link = Backbone.View.extend
+Toolboxes.LinkView = Backbone.View.extend
   tagName: 'li'
   className: 'link'
   template: '#link-view-template'
@@ -15,7 +15,7 @@ Toolboxes.Views.Link = Backbone.View.extend
     _.template(template_html, @model.attributes)
 
   initialize: ->
-    @el       = $(@el)
+    @el = $(@el)
 
   render: ->
     @el.html(@rendered_template())

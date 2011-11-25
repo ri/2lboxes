@@ -1,4 +1,4 @@
-Toolboxes.Views.Toolbox = Backbone.View.extend
+Toolboxes.ToolboxView = Backbone.View.extend
   className: "span5 toolbox"
   template: "#toolbox-view-template"
 
@@ -23,7 +23,7 @@ Toolboxes.Views.Toolbox = Backbone.View.extend
   addTray: (model, collection, options) ->
     options ||= {quiet: false}
 
-    view = new Toolboxes.Views.Tray(model: model)
+    view = new Toolboxes.TrayView(model: model)
     view.render()
 
     @$('ul.trays').append(view.el)

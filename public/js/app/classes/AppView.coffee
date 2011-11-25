@@ -1,9 +1,9 @@
-Toolboxes.Views.App = Backbone.View.extend
+Toolboxes.AppView = Backbone.View.extend
   el: '#main'
 
   initialize: ->
-    @links     = new Toolboxes.Views.Links()
-    @toolboxes = new Toolboxes.Views.Toolboxes()
+    @links     = new Toolboxes.LinksView()
+    @toolboxes = new Toolboxes.ToolboxesView()
 
     @links.render()
     @toolboxes.render()

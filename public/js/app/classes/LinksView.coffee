@@ -1,4 +1,4 @@
-Toolboxes.Views.Links = Backbone.View.extend
+Toolboxes.LinksView = Backbone.View.extend
   id: 'links'
   className: 'sidebar'
   template: '#links-view-template'
@@ -9,7 +9,7 @@ Toolboxes.Views.Links = Backbone.View.extend
 
     @el.html(@template)
 
-    @collection = new Toolboxes.Collections.Links()
+    @collection = new Toolboxes.Links()
     @collection.bind('add', @addLink, @)
     @collection.bind('reset', @resetLinks, @)
     @collection.fetch()
@@ -17,7 +17,7 @@ Toolboxes.Views.Links = Backbone.View.extend
     @
 
   addLink: (model, collection) ->
-    view = new Toolboxes.Views.Link(model: model)
+    view = new Toolboxes.LinkView(model: model)
     view.render()
     @$('ul').append(view.el)
 

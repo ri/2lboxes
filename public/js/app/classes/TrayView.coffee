@@ -1,4 +1,4 @@
-Toolboxes.Views.Tray = Backbone.View.extend
+Toolboxes.TrayView = Backbone.View.extend
   tagName: 'li'
   template: '#tray-view-template'
 
@@ -12,7 +12,8 @@ Toolboxes.Views.Tray = Backbone.View.extend
     @template = $(@template).html()
 
     @el.droppable
-      accept: ".#{Toolboxes.Views.Link.prototype.className}"
+      accept: ".#{Toolboxes.LinkView.prototype.className}"
+      tolerance: 'pointer'
 
   render: ->
     @el.html(_.template(@template, @model.toJSON()))
